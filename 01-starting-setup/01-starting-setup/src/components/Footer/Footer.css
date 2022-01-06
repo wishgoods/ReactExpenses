@@ -1,0 +1,17 @@
+.title-container{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+   
+    position: sticky;
+}
+h2{
+    color:#40005d;
+    text-align: center;
+    width: fit-content;
+    height:10px;
+    bottom: 0px;
+}
