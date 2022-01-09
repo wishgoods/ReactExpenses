@@ -13,14 +13,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      totalReactPackages: null,
-    };
+    // this.state = {
+    //   totalReactPackages: null,
+    // };
     this.componentDidMount();
   }
   addExpenseHandler = (expense) => {
     this.expenses.push(expense);
-    this.setState({ totalReactPackages: this.expenses });
+    //this.setState({ totalReactPackages: this.expenses });
     this.addNewExpense(expense);
   };
 
@@ -32,7 +32,7 @@ class App extends React.Component {
     };
     fetch("http://localhost:5000/addNewExpense", requestOptions)
       .then((response) => response.json())
-      .then((data) => this.setState({ totalReactPackages: data.total }));
+   
     this.componentDidMount();
     
   }
@@ -50,7 +50,7 @@ class App extends React.Component {
     //const { totalReactPackages } = this.state;
 
     return (
-      <div className="app-container">
+
         <div className="content-cotntainer">
           <Helmet>
             <title>Expenses Manager</title>
@@ -63,7 +63,7 @@ class App extends React.Component {
         </div>
         
         
-      </div>
+    
     );
   }
 }

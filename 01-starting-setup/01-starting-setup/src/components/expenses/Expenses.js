@@ -90,7 +90,9 @@ for (let index = min_year; index <= max_year; index++) {
        
         getYearToFilter={FilterYearHandler}
       ></ExpenseFilter>
-     {} <ExpensesChart expenses = {filtered_expenses}/>
+     
+     {} <ExpensesChart  expenses = {filtered_expenses}/>
+ 
       <Card className="expenses-container">
         <ol>
           <div className="scroller">

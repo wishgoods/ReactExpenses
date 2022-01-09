@@ -14,26 +14,43 @@ ol li{
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  height: max-content;
+  
 }
 .scroller
 {
 overflow-y: scroll;
 
-height: 200px;
+height: 30rem;
 display: grid;
 align-items: center;
 }
+@media  (max-width:500px){
+  .scroller
+{
+overflow-y: scroll;
+
+height: 25rem;
+display: grid;
+align-items: center;
+}
+}
 @media  (max-width:768px){
   .card_and_filter {
-  width:100vw;
+  width:95vw;
+
   }
 }
 .card_and_filter{
+ 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  height: 95vh;
+ 
+  
 }
 button{
   width:100%
 }
+
