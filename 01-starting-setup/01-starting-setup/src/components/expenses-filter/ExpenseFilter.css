@@ -1,7 +1,9 @@
 select{
   width: 20%;
+  min-width:100px;
   height: 30px;
   border-radius: 10px;
+  text-align: center;
 }
 option{
   width: 100%;
@@ -12,16 +14,16 @@ option{
 .filter-cotainer{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
   background-color: #a892ee;
   padding: 0.5rem;
-  
-  width: 105%;
+  align-self: center;
+  width: 100%;
   border-radius: 12px;
-  text-align: center;
+
   justify-content: center;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
-  position: sticky;
+
   top: 0px;
- transform: translate(-2.5%);
+
 }

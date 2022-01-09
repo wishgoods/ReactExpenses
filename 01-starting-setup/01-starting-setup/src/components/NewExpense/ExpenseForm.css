@@ -5,6 +5,7 @@
     margin-bottom: 1rem;
     text-align: left;
     align-items: center;
+    justify-content: space-between;
   }
   
   .new-expense__control label {
@@ -34,3 +35,10 @@
   small{
     color:crimson
   }
+  .new-expense__control.invalid input{
+border-color: crimson;
+background-color: rgb(202, 140, 150);
+  }
+  .new-expense__control.invalid label{
+    color: crimson;
+      }

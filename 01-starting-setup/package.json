@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.3.3"
   }
 }

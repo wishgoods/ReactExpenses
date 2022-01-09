@@ -19,15 +19,17 @@ const ExpenseFilter = (props) => {
   return (
     <div className="filter-cotainer">
       {/* <label>Filter By Year</label> */}
+    
       <select defaultValue="Select Year To Filter" onChange={yearChangeHandler}>
       <option  disabled key={-1}>Select Year To Filter</option>
-        <option key={0}>{"("+props.options[0]+"-"+props.options[props.options.length-1]+")"}</option>
+       {props.options.length>0 ? <option key={0}>{"("+props.options[0]+"-"+props.options[props.options.length-1]+")"}</option>:<option disabled></option>}
         {props.options.map((el) => {
           return <option key={el}>{el}</option>;
         })}
        
       </select>
-    </div>
+      </div>
+   
   );
 };
 export default ExpenseFilter;

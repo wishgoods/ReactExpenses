@@ -5,12 +5,16 @@ import ExpenseFilter from "../expenses-filter/ExpenseFilter";
 import { useState } from "react";
 import Footer from "../Footer/Footer";
 import ExpensesChart from "./ExpensesChart";
+import NewExpense from "../NewExpense/NewExpense";
 
 const Expenses = (props) => {
   let options = [];
   const [filtered_expenses, setFiltered] = useState(props.expenses);
   let min_year ="10000000000"
   let max_year = "0";
+  const [show_form, setShowForm] = useState(false);
+
+  
   props.expenses.forEach((element) => {
   
     let year = new Date(element.date).getFullYear();
@@ -64,15 +68,29 @@ for (let index = min_year; index <= max_year; index++) {
     }
     return filtered_expenses;
   };
-  
+  const addExpenseHandler=(expense)=>{
+    
+    props.addExpenseHandler(expense);
+   
+  }
+  const changeOnShow=()=>{
+    setShowForm(
+      !show_form);
+  }
+ 
+
   return (
+    
     <div className="card_and_filter">
+  
+      {show_form?<NewExpense className="new-expense" onAddExpense={addExpenseHandler} options ={options} changeOnShow={changeOnShow}></NewExpense>:<div className="new-expense"><button  onClick={changeOnShow}>Add Expense</button></div>}
+          
       <ExpenseFilter
       options={options}
        
         getYearToFilter={FilterYearHandler}
       ></ExpenseFilter>
-      <ExpensesChart expenses = {filtered_expenses}/>
+     {} <ExpensesChart expenses = {filtered_expenses}/>
       <Card className="expenses-container">
         <ol>
           <div className="scroller">

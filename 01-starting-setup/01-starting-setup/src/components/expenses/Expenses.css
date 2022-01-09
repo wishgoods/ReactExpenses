@@ -1,15 +1,15 @@
 ol{
   border-radius: 25px;
   padding: 3%;
-  background-color: whitesmoke;
+  background-color: #f8dfff;;
   width: 100%;
 }
 ol li{
   list-style-type: none;
 }
-.expenses-container{
+.expenses_container{
   
-  background-color: darkgray;
+  background-color: #a892ee;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
@@ -23,4 +23,17 @@ overflow-y: scroll;
 height: 200px;
 display: grid;
 align-items: center;
+}
+@media  (max-width:768px){
+  .card_and_filter {
+  width:100vw;
+  }
+}
+.card_and_filter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+button{
+  width:100%
 }

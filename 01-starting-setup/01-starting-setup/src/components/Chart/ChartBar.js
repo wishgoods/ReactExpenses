@@ -1,5 +1,5 @@
 import React from "react";
-import "./ChartBar.css";
+import styles from  "./ChartBar.module.css";
 
 const ChartBar = (props) => {
     
@@ -9,12 +9,13 @@ const ChartBar = (props) => {
         barFillHeight=(props.value/props.maxValue)*100+'%';
        // console.log(barFillHeight+":"+props.maxValue)
     }
+    //css modules
   return (
-    <div className="chart-bar">
-      <div className="chart-bar__inner">
-        <div className="chart-bar__fill" style={{height:barFillHeight}}>{props.dataPoint}</div>
+    <div className={styles.chart_bar}>
+      <div className={styles.chart_bar__inner}>
+        <div className={styles.chart_bar__fill} style={{height:barFillHeight}}>{props.dataPoint}</div>
       </div>
-      <div className="chart-bar__label">{props.label}</div>
+      <div className={styles.chart_bar__label}>{props.label}</div>
     </div>
   );
 };
