@@ -1,5 +1,6 @@
 import Expenses from "./components/expenses/Expenses.js";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+
 //import NewExpense from "./components/NewExpense/NewExpense";
 //import Header from "./components/Header/Header";
 import React from "react";
@@ -20,8 +21,9 @@ class App extends React.Component {
   }
   addExpenseHandler = (expense) => {
     this.expenses.push(expense);
-    //this.setState({ totalReactPackages: this.expenses });
+    
     this.addNewExpense(expense);
+    this.setState({ expenses: this.expenses });
   };
 
   async addNewExpense(expense) {
@@ -42,26 +44,27 @@ class App extends React.Component {
 
     const response = await fetch("http://localhost:5000/getAllExpenses");
     const data = await response.json();
-    this.setState({ totalReactPackages: data.total });
+    
     this.expenses = data.data;
+    this.setState({ expenses: this.expenses });
   }
 
   render() {
     //const { totalReactPackages } = this.state;
 
     return (
-
+        <HelmetProvider>
         <div className="content-cotntainer">
-          <Helmet>
+      <Helmet>
             <title>Expenses Manager</title>
             <meta name="description" content="App Description" />
             <meta name="theme-color" content="#008f68" />
-          </Helmet>
+        
           {/* <Header title="Expenses List Manager"></Header> */}
-          
+          </Helmet>
           <Expenses  expenses={this.expenses} addExpenseHandler={this.addExpenseHandler}></Expenses>
         </div>
-        
+        </HelmetProvider>
         
     
     );
