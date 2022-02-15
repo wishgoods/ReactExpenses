@@ -29,13 +29,13 @@ body {
   text-align: center;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   position: sticky;
-  
+
  
 }
 .content-container{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
  height: fit-content;
 
  

@@ -13,11 +13,6 @@ class App extends React.Component {
   
   constructor(props) {
     super(props);
-
-    // this.state = {
-    //   totalReactPackages: null,
-    // };
-    this.componentDidMount();
   }
   addExpenseHandler = (expense) => {
     this.expenses.push(expense);

@@ -2,16 +2,14 @@ import "./ExpenseForm.css";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-
 const ExpenseForm = (props) => {
-  let min_date = props.options[0]+"-01-01"
-  let max_date = props.options[props.options.length-1]+"-12-31"
-  if(props.options.length ===0)
-  {
-     min_date = new Date().getFullYear()+"-01-01"
-     max_date = new Date().getFullYear()+5+"-12-31"
+  let min_date = props.options[0] + "-01-01";
+  let max_date = props.options[props.options.length - 1] + "-12-31";
+  if (props.options.length === 0) {
+    min_date = new Date().getFullYear() + "-01-01";
+    max_date = new Date().getFullYear() + 5 + "-12-31";
   }
- 
+
   const titleChangeHandler = (event) => {
     setUserInput((prevState) => {
       return { ...userInput, enterdTitle: event.target.value };
@@ -72,16 +70,24 @@ const ExpenseForm = (props) => {
   return (
     <form onSubmit={handleSubmit(submitHandler)}>
       <div className="new-expense__controls">
-        <div className={`new-expense__control ${userInput.enterdTitle.length<1?'invalid':''}`}>
-          <label >Title</label>
-          <input 
+        <div
+          className={`new-expense__control ${
+            userInput.enterdTitle.length < 1 ? "invalid" : ""
+          }`}
+        >
+          <label>Title</label>
+          <input
             type="text"
             value={userInput.enterdTitle}
             onChange={titleChangeHandler}
           ></input>
         </div>
-        <div className={`new-expense__control ${userInput.enterdAmount.length<1?'invalid':''}`}>
-          <label >Amount</label>
+        <div
+          className={`new-expense__control ${
+            userInput.enterdAmount.length < 1 ? "invalid" : ""
+          }`}
+        >
+          <label>Amount</label>
           <input
             value={userInput.enterdAmount}
             onChange={amountChangeHandler}
@@ -90,9 +96,13 @@ const ExpenseForm = (props) => {
             step="0.01"
           ></input>
         </div>
-        <div className={`new-expense__control ${userInput.enterdDate.length<1?'invalid':''}`}>
+        <div
+          className={`new-expense__control ${
+            userInput.enterdDate.length < 1 ? "invalid" : ""
+          }`}
+        >
           <label>Date</label>
-          <input 
+          <input
             value={userInput.enterdDate}
             onChange={dateChangeHandler}
             type="date"
